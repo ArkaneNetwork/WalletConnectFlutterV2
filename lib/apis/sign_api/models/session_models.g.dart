@@ -85,6 +85,7 @@ _$SessionRequestImpl _$$SessionRequestImplFromJson(Map<String, dynamic> json) =>
       topic: json['topic'] as String,
       method: json['method'] as String,
       chainId: json['chainId'] as String,
+      expiryTimestamp: json['expiryTimestamp'] as int,
       params: json['params'],
       verifyContext:
           VerifyContext.fromJson(json['verifyContext'] as Map<String, dynamic>),
@@ -97,6 +98,7 @@ Map<String, dynamic> _$$SessionRequestImplToJson(
       'topic': instance.topic,
       'method': instance.method,
       'chainId': instance.chainId,
+      'expiryTimestamp': instance.expiryTimestamp,
       'params': instance.params,
       'verifyContext': instance.verifyContext.toJson(),
     };

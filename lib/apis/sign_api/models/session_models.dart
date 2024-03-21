@@ -77,6 +77,7 @@ class SessionRequest with _$SessionRequest {
     required String topic,
     required String method,
     required String chainId,
+    required int expiryTimestamp,
     required dynamic params,
     required VerifyContext verifyContext,
   }) = _SessionRequest;

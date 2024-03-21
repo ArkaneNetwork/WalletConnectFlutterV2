@@ -1256,11 +1256,17 @@ class SignEngine implements ISignEngine {
         session.peer.metadata,
       );
 
+      final int expiryTimestamp = request.request.expiryTimestamp ??
+          WalletConnectUtils.calculateExpiry(
+            WalletConnectConstants.FIVE_MINUTES,
+          );
+
       final sessionRequest = SessionRequest(
         id: payload.id,
         topic: topic,
         method: request.request.method,
         chainId: request.chainId,
+        expiryTimestamp: expiryTimestamp,
         params: request.request.params,
         verifyContext: verifyContext,
       );

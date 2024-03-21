@@ -138,6 +138,7 @@ class SessionRequestParams with _$SessionRequestParams {
   const factory SessionRequestParams({
     required String method,
     required dynamic params,
+    int? expiryTimestamp,
   }) = _SessionRequestParams;
 
   factory SessionRequestParams.fromJson(Map<String, dynamic> json) =>

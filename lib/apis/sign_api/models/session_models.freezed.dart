@@ -12,7 +12,7 @@ part of 'session_models.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Namespace _$NamespaceFromJson(Map<String, dynamic> json) {
   return _Namespace.fromJson(json);
@@ -160,7 +160,7 @@ class _$NamespaceImpl implements _Namespace {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NamespaceImpl &&
@@ -553,7 +553,7 @@ class _$SessionDataImpl implements _SessionData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SessionDataImpl &&
@@ -667,6 +667,7 @@ mixin _$SessionRequest {
   String get topic => throw _privateConstructorUsedError;
   String get method => throw _privateConstructorUsedError;
   String get chainId => throw _privateConstructorUsedError;
+  int get expiryTimestamp => throw _privateConstructorUsedError;
   dynamic get params => throw _privateConstructorUsedError;
   VerifyContext get verifyContext => throw _privateConstructorUsedError;
 
@@ -687,6 +688,7 @@ abstract class $SessionRequestCopyWith<$Res> {
       String topic,
       String method,
       String chainId,
+      int expiryTimestamp,
       dynamic params,
       VerifyContext verifyContext});
 
@@ -710,6 +712,7 @@ class _$SessionRequestCopyWithImpl<$Res, $Val extends SessionRequest>
     Object? topic = null,
     Object? method = null,
     Object? chainId = null,
+    Object? expiryTimestamp = null,
     Object? params = freezed,
     Object? verifyContext = null,
   }) {
@@ -730,6 +733,10 @@ class _$SessionRequestCopyWithImpl<$Res, $Val extends SessionRequest>
           ? _value.chainId
           : chainId // ignore: cast_nullable_to_non_nullable
               as String,
+      expiryTimestamp: null == expiryTimestamp
+          ? _value.expiryTimestamp
+          : expiryTimestamp // ignore: cast_nullable_to_non_nullable
+              as int,
       params: freezed == params
           ? _value.params
           : params // ignore: cast_nullable_to_non_nullable
@@ -763,6 +770,7 @@ abstract class _$$SessionRequestImplCopyWith<$Res>
       String topic,
       String method,
       String chainId,
+      int expiryTimestamp,
       dynamic params,
       VerifyContext verifyContext});
 
@@ -785,6 +793,7 @@ class __$$SessionRequestImplCopyWithImpl<$Res>
     Object? topic = null,
     Object? method = null,
     Object? chainId = null,
+    Object? expiryTimestamp = null,
     Object? params = freezed,
     Object? verifyContext = null,
   }) {
@@ -805,6 +814,10 @@ class __$$SessionRequestImplCopyWithImpl<$Res>
           ? _value.chainId
           : chainId // ignore: cast_nullable_to_non_nullable
               as String,
+      expiryTimestamp: null == expiryTimestamp
+          ? _value.expiryTimestamp
+          : expiryTimestamp // ignore: cast_nullable_to_non_nullable
+              as int,
       params: freezed == params
           ? _value.params
           : params // ignore: cast_nullable_to_non_nullable
@@ -826,6 +839,7 @@ class _$SessionRequestImpl implements _SessionRequest {
       required this.topic,
       required this.method,
       required this.chainId,
+      required this.expiryTimestamp,
       required this.params,
       required this.verifyContext});
 
@@ -841,17 +855,19 @@ class _$SessionRequestImpl implements _SessionRequest {
   @override
   final String chainId;
   @override
+  final int expiryTimestamp;
+  @override
   final dynamic params;
   @override
   final VerifyContext verifyContext;
 
   @override
   String toString() {
-    return 'SessionRequest(id: $id, topic: $topic, method: $method, chainId: $chainId, params: $params, verifyContext: $verifyContext)';
+    return 'SessionRequest(id: $id, topic: $topic, method: $method, chainId: $chainId, expiryTimestamp: $expiryTimestamp, params: $params, verifyContext: $verifyContext)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SessionRequestImpl &&
@@ -859,6 +875,8 @@ class _$SessionRequestImpl implements _SessionRequest {
             (identical(other.topic, topic) || other.topic == topic) &&
             (identical(other.method, method) || other.method == method) &&
             (identical(other.chainId, chainId) || other.chainId == chainId) &&
+            (identical(other.expiryTimestamp, expiryTimestamp) ||
+                other.expiryTimestamp == expiryTimestamp) &&
             const DeepCollectionEquality().equals(other.params, params) &&
             (identical(other.verifyContext, verifyContext) ||
                 other.verifyContext == verifyContext));
@@ -866,8 +884,15 @@ class _$SessionRequestImpl implements _SessionRequest {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, topic, method, chainId,
-      const DeepCollectionEquality().hash(params), verifyContext);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      topic,
+      method,
+      chainId,
+      expiryTimestamp,
+      const DeepCollectionEquality().hash(params),
+      verifyContext);
 
   @JsonKey(ignore: true)
   @override
@@ -890,6 +915,7 @@ abstract class _SessionRequest implements SessionRequest {
       required final String topic,
       required final String method,
       required final String chainId,
+      required final int expiryTimestamp,
       required final dynamic params,
       required final VerifyContext verifyContext}) = _$SessionRequestImpl;
 
@@ -904,6 +930,8 @@ abstract class _SessionRequest implements SessionRequest {
   String get method;
   @override
   String get chainId;
+  @override
+  int get expiryTimestamp;
   @override
   dynamic get params;
   @override

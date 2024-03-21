@@ -239,6 +239,7 @@ _$SessionRequestParamsImpl _$$SessionRequestParamsImplFromJson(
     _$SessionRequestParamsImpl(
       method: json['method'] as String,
       params: json['params'],
+      expiryTimestamp: json['expiryTimestamp'] as int?,
     );
 
 Map<String, dynamic> _$$SessionRequestParamsImplToJson(
@@ -246,6 +247,7 @@ Map<String, dynamic> _$$SessionRequestParamsImplToJson(
     <String, dynamic>{
       'method': instance.method,
       'params': instance.params,
+      'expiryTimestamp': instance.expiryTimestamp,
     };
 
 _$WcSessionEventRequestImpl _$$WcSessionEventRequestImplFromJson(

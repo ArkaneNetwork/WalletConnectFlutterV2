@@ -12,7 +12,7 @@ part of 'json_rpc_models.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 WcPairingDeleteRequest _$WcPairingDeleteRequestFromJson(
     Map<String, dynamic> json) {
@@ -131,7 +131,7 @@ class _$WcPairingDeleteRequestImpl implements _WcPairingDeleteRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WcPairingDeleteRequestImpl &&
@@ -281,7 +281,7 @@ class _$WcPairingPingRequestImpl implements _WcPairingPingRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WcPairingPingRequestImpl &&
@@ -545,7 +545,7 @@ class _$WcSessionProposeRequestImpl implements _WcSessionProposeRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WcSessionProposeRequestImpl &&
@@ -730,7 +730,7 @@ class _$WcSessionProposeResponseImpl implements _WcSessionProposeResponse {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WcSessionProposeResponseImpl &&
@@ -1032,7 +1032,7 @@ class _$WcSessionSettleRequestImpl implements _WcSessionSettleRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WcSessionSettleRequestImpl &&
@@ -1221,7 +1221,7 @@ class _$WcSessionUpdateRequestImpl implements _WcSessionUpdateRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WcSessionUpdateRequestImpl &&
@@ -1376,7 +1376,7 @@ class _$WcSessionExtendRequestImpl implements _WcSessionExtendRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WcSessionExtendRequestImpl &&
@@ -1548,7 +1548,7 @@ class _$WcSessionDeleteRequestImpl implements _WcSessionDeleteRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WcSessionDeleteRequestImpl &&
@@ -1704,7 +1704,7 @@ class _$WcSessionPingRequestImpl implements _WcSessionPingRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WcSessionPingRequestImpl &&
@@ -1877,7 +1877,7 @@ class _$WcSessionRequestRequestImpl implements _WcSessionRequestRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WcSessionRequestRequestImpl &&
@@ -1931,6 +1931,7 @@ SessionRequestParams _$SessionRequestParamsFromJson(Map<String, dynamic> json) {
 mixin _$SessionRequestParams {
   String get method => throw _privateConstructorUsedError;
   dynamic get params => throw _privateConstructorUsedError;
+  int? get expiryTimestamp => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1944,7 +1945,7 @@ abstract class $SessionRequestParamsCopyWith<$Res> {
           $Res Function(SessionRequestParams) then) =
       _$SessionRequestParamsCopyWithImpl<$Res, SessionRequestParams>;
   @useResult
-  $Res call({String method, dynamic params});
+  $Res call({String method, dynamic params, int? expiryTimestamp});
 }
 
 /// @nodoc
@@ -1963,6 +1964,7 @@ class _$SessionRequestParamsCopyWithImpl<$Res,
   $Res call({
     Object? method = null,
     Object? params = freezed,
+    Object? expiryTimestamp = freezed,
   }) {
     return _then(_value.copyWith(
       method: null == method
@@ -1973,6 +1975,10 @@ class _$SessionRequestParamsCopyWithImpl<$Res,
           ? _value.params
           : params // ignore: cast_nullable_to_non_nullable
               as dynamic,
+      expiryTimestamp: freezed == expiryTimestamp
+          ? _value.expiryTimestamp
+          : expiryTimestamp // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 }
@@ -1985,7 +1991,7 @@ abstract class _$$SessionRequestParamsImplCopyWith<$Res>
       __$$SessionRequestParamsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String method, dynamic params});
+  $Res call({String method, dynamic params, int? expiryTimestamp});
 }
 
 /// @nodoc
@@ -2001,6 +2007,7 @@ class __$$SessionRequestParamsImplCopyWithImpl<$Res>
   $Res call({
     Object? method = null,
     Object? params = freezed,
+    Object? expiryTimestamp = freezed,
   }) {
     return _then(_$SessionRequestParamsImpl(
       method: null == method
@@ -2011,6 +2018,10 @@ class __$$SessionRequestParamsImplCopyWithImpl<$Res>
           ? _value.params
           : params // ignore: cast_nullable_to_non_nullable
               as dynamic,
+      expiryTimestamp: freezed == expiryTimestamp
+          ? _value.expiryTimestamp
+          : expiryTimestamp // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -2020,7 +2031,7 @@ class __$$SessionRequestParamsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$SessionRequestParamsImpl implements _SessionRequestParams {
   const _$SessionRequestParamsImpl(
-      {required this.method, required this.params});
+      {required this.method, required this.params, this.expiryTimestamp});
 
   factory _$SessionRequestParamsImpl.fromJson(Map<String, dynamic> json) =>
       _$$SessionRequestParamsImplFromJson(json);
@@ -2029,25 +2040,29 @@ class _$SessionRequestParamsImpl implements _SessionRequestParams {
   final String method;
   @override
   final dynamic params;
+  @override
+  final int? expiryTimestamp;
 
   @override
   String toString() {
-    return 'SessionRequestParams(method: $method, params: $params)';
+    return 'SessionRequestParams(method: $method, params: $params, expiryTimestamp: $expiryTimestamp)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SessionRequestParamsImpl &&
             (identical(other.method, method) || other.method == method) &&
-            const DeepCollectionEquality().equals(other.params, params));
+            const DeepCollectionEquality().equals(other.params, params) &&
+            (identical(other.expiryTimestamp, expiryTimestamp) ||
+                other.expiryTimestamp == expiryTimestamp));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, method, const DeepCollectionEquality().hash(params));
+  int get hashCode => Object.hash(runtimeType, method,
+      const DeepCollectionEquality().hash(params), expiryTimestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -2068,7 +2083,8 @@ class _$SessionRequestParamsImpl implements _SessionRequestParams {
 abstract class _SessionRequestParams implements SessionRequestParams {
   const factory _SessionRequestParams(
       {required final String method,
-      required final dynamic params}) = _$SessionRequestParamsImpl;
+      required final dynamic params,
+      final int? expiryTimestamp}) = _$SessionRequestParamsImpl;
 
   factory _SessionRequestParams.fromJson(Map<String, dynamic> json) =
       _$SessionRequestParamsImpl.fromJson;
@@ -2077,6 +2093,8 @@ abstract class _SessionRequestParams implements SessionRequestParams {
   String get method;
   @override
   dynamic get params;
+  @override
+  int? get expiryTimestamp;
   @override
   @JsonKey(ignore: true)
   _$$SessionRequestParamsImplCopyWith<_$SessionRequestParamsImpl>
@@ -2212,7 +2230,7 @@ class _$WcSessionEventRequestImpl implements _WcSessionEventRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WcSessionEventRequestImpl &&
@@ -2368,7 +2386,7 @@ class _$SessionEventParamsImpl implements _SessionEventParams {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SessionEventParamsImpl &&

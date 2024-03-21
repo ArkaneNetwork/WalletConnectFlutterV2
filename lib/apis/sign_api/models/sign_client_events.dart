@@ -125,6 +125,7 @@ class SessionRequestEvent extends EventArgs {
   String topic;
   String method;
   String chainId;
+  int expiryTimestamp;
   dynamic params;
 
   SessionRequestEvent(
@@ -132,6 +133,7 @@ class SessionRequestEvent extends EventArgs {
     this.topic,
     this.method,
     this.chainId,
+    this.expiryTimestamp,
     this.params,
   );
 
@@ -143,13 +145,14 @@ class SessionRequestEvent extends EventArgs {
       request.topic,
       request.method,
       request.chainId,
+      request.expiryTimestamp,
       request.params,
     );
   }
 
   @override
   String toString() {
-    return 'SessionRequestEvent(id: $id, topic: $topic, method: $method, chainId: $chainId, params: $params)';
+    return 'SessionRequestEvent(id: $id, topic: $topic, method: $method, chainId: $chainId, expiryTimestamp: $expiryTimestamp, params: $params)';
   }
 }
 
