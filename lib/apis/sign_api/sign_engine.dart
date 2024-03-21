@@ -858,9 +858,7 @@ class SignEngine implements ISignEngine {
     );
     core.expirer.set(
       id.toString(),
-      WalletConnectUtils.calculateExpiry(
-        WalletConnectConstants.FIVE_MINUTES,
-      ),
+      request.expiryTimestamp,
     );
   }
 
